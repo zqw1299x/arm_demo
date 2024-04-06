@@ -352,29 +352,7 @@ int main(void)
 		Debug_USART_Config();
     //uart1_init(9600);    /* 发送一个字符串 */
     Usart_SendString( DEBUG_USART,"这是一个串口中断接收回显实验\n");
-    printf("这是一个串口中断接收回显实验\n");
-		while(1)
-	  {
-
-		}
-    //healthParaInit();
-//    while(1){
-//    
-//        memset(message_buffer,0,250);
-//        memcpy(message_buffer,&healthManage,sizeof(healthManage));
-//        crc = calculateCRC8((const unsigned char*)&powerBoardMsgeX, sizeof(powerBoardMsgeX)-1);
-//        printf("value1:%0x\r\n",crc);
-//        crc = calculateCRC8((const unsigned char*)&healthManage, sizeof(healthManage)-1);
-//        printf("value1:%0x\r\n",crc);
-//        
-//        for(i=0;i<sizeof(healthManage);i++)Usart_SendByte( DEBUG_USART, message_buffer[i]);
-//        
-//        memcpy_big_endian(readbuff, &healthManage, 6);
-//        
-//        for(i=0;i<6;i++)Usart_SendByte( DEBUG_USART, readbuff[i]);
-//        
-//    }
-    
+    printf("这是一个串口中断接收回显实验\n");   
     while(1)
     {	
 				if(uart1_rec_flag==1)	//数据串口1读到数据------1中数据已经准备好，正在操作2

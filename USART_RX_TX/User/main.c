@@ -31,8 +31,8 @@ int main(void)
 	uint8_t ucaRxBuf[256];
 	uint16_t usRxCount=0; 
 	
-  /*初始化USART 配置模式为 115200 8-N-1，中断接收*/
-  Debug_USART_Config();
+	/*初始化USART 配置模式为 115200 8-N-1，中断接收*/
+	Debug_USART_Config();
  
 	/*调用printf函数，因为重定向了fputc，printf的内容会输出到串口*/
 	printf("\r\nPrintf方式输出：这是一个串口中断接收回显实验 \r\n");	
@@ -45,7 +45,7 @@ int main(void)
 	/*STM32串口接收到字符后会进入stm32f4xx_it.c文件的中断服务函数，
 	*接收该数据，并标记Rxflag标志位。*/
 
-  while(1)
+ 	while(1)
 	{	
 		/* 
 			接收DEBUG_USART口的数据，分析并处理 

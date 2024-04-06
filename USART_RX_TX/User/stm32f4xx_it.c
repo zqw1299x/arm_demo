@@ -30,7 +30,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 #include "./usart/bsp_debug_usart.h"
-#include "string.h"
 
 /** @addtogroup STM32F429I_DISCOVERY_Examples
   * @{
@@ -50,7 +49,7 @@
 /******************************************************************************/
 /*            Cortex-M4 Processor Exceptions Handlers                         */
 /******************************************************************************/
-uint8_t rxbuf[100],idleFlag = 0;
+
 /**
   * @brief  This function handles NMI exception.
   * @param  None
@@ -146,15 +145,17 @@ void SysTick_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32f429_439xx.s).                         */
 /******************************************************************************/
-void DEBUG_USART_IRQHandler(void)
+
+extern uint8_t Rxflag;
+extern uint8_t ucTemp;
+void RS232_USART_IRQHandler(void)
 {
-  uint8_t ucTemp,i = 0;
-	if(USART_GetITStatus(DEBUG_USART,USART_IT_RXNE)!=RESET)
-	{	
-		ucTemp = USART_ReceiveData( DEBUG_USART );
-		USART_SendData(DEBUG_USART,ucTemp);    
-	}	 
-	USART_ClearFlag(DEBUG_USART, USART_IT_RXNE);
+	if(USART_GetITStatus( RS232_USART, USART_IT_RXNE ) != RESET)
+	{		
+	  Rxflag=1;		
+		ucTemp = USART_ReceiveData( RS232_USART );
+	} 
+	 
 }	
 	
 /**

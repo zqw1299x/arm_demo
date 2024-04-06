@@ -40,4 +40,3 @@
 ..\..\output\stm32f4xx_it.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sai.h
 ..\..\output\stm32f4xx_it.o: ..\..\User\./usart/bsp_debug_usart.h
 ..\..\output\stm32f4xx_it.o: D:\BaiduNetdiskDownload\SoftwareAZB\ARM\ARMCC\Bin\..\include\stdio.h
-..\..\output\stm32f4xx_it.o: D:\BaiduNetdiskDownload\SoftwareAZB\ARM\ARMCC\Bin\..\include\string.h
